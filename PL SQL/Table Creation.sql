@@ -1,6 +1,5 @@
 create database aspiresys;
 
--- @block
 use aspiresys;
 
 -- table creation
@@ -12,6 +11,9 @@ salary numeric,
 experience_years numeric,
 job_location varchar(20)
 );
+
+alter table employee modify employee_id numeric primary key;
+desc employee;
 
 -- value insertion in table
 insert into employee (employee_id, employee_name, age, salary, experience_years, job_location)

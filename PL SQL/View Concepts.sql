@@ -6,3 +6,4 @@ select * from employee;
 create view tn_emp as select * from employee where job_location = 'chennai' and team = 'TN';
 select * from tn_emp;
 
+

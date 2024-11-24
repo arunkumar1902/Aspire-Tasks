@@ -2,17 +2,14 @@ use aspiresys;
 
 select * from employee;
 
--- stored procedure
-delimiter $$  -- delimiter command used for complex block of codes such as procedures,fn,triggers
-create procedure emp_salary(in emp_name varchar(100))
+-- write a procedure that shows details of employee joined in a specific year
+
+delimiter &&
+create procedure joined_year(year_of_joining int)
 begin
-select salary from employee where emp_name = employee_name ;
-end $$ 
-delimiter ;
-call emp_salary('Sankar');
+select * from employee where year(date_of_joining)=year_of_joining;
+end ;
+delimiter;
 
-drop procedure emp_salary; -- to remove procedure
+call joined_year(2020);
 
-
--- normal query 
-select salary from employee where employee_name = 'Arun';

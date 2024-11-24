@@ -15,4 +15,4 @@ select max(salary) from employee;
 select sum(salary) from employee;
 
 -- 5. Find the count of employees in each department.
-
+select dept_id, count(*) as count_of_employee from employee group by dept_id;
